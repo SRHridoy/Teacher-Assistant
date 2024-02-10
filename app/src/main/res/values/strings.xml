@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Teacher Assistant</string>
+    <string name="student_image">student image</string>
+    <string name="student_id">2102002</string>
+    <string name="student_name">Md. Sohanur Rahman Hridoy</string>
+    <string name="present_or_not">Mark</string>
 </resources>
