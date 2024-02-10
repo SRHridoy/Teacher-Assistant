@@ -1,8 +1,10 @@
-package com.elitcoder.teacherassistant;
+package com.elitcoder.teacherassistant.Splash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.elitcoder.teacherassistant.R;
 
 public class MainActivity extends AppCompatActivity {
 
