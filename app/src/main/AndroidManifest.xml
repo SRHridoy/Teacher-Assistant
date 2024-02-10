@@ -13,19 +13,19 @@
         android:theme="@style/Theme.TeacherAssistant"
         tools:targetApi="31">
         <activity
-            android:name=".CgpaCalcActivity"
+            android:name=".Cgpa.CgpaCalcActivity"
             android:exported="false" />
         <activity
-            android:name=".CourseMaterialActivity"
+            android:name=".CourseMaterial.CourseMaterialActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".AttandanceActivity"
+            android:name=".Attendance.AttendanceActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Splash.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
