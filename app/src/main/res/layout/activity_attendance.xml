@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#fff"
     tools:context=".Attendance.AttendanceActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -24,7 +23,8 @@
         android:layout_gravity="end|bottom"
         android:layout_marginEnd="@dimen/_8sdp"
         android:layout_marginBottom="@dimen/_5sdp"
-        android:backgroundTint="#00E5FF"
+        android:backgroundTint="#64DD17"
+        android:elevation="0dp"
         android:src="@drawable/baseline_library_add_check_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

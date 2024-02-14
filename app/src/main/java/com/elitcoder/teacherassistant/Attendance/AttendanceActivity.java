@@ -2,8 +2,8 @@ package com.elitcoder.teacherassistant.Attendance;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
 
@@ -23,6 +23,21 @@ public class AttendanceActivity extends AppCompatActivity {
 
         //RecyclerFunctionality call:
         recyclerFunctionality();
+
+        //Setting up finish button :
+        finishAttendance();
+    }
+
+    //Finish button :
+    private void finishAttendance() {
+        attendanceBinding.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dialog = new Dialog(AttendanceActivity.this);
+                dialog.setContentView(R.layout.confirm_attendance_layout);
+                dialog.show();
+            }
+        });
     }
 
 
