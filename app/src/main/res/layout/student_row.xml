@@ -78,7 +78,7 @@
                 android:gravity="center"
                 android:text="Absent"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_8ssp"
+                android:textSize="@dimen/_7ssp"
                 android:textStyle="bold"
                 app:strokeColor="@color/black"
                 tools:ignore="SmallSp" />
