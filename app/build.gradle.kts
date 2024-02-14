@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = "com.elitcoder.teacherassistant"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -46,5 +46,7 @@ dependencies {
     implementation ("com.intuit.sdp:sdp-android:1.1.0")
     //for responsive size ssp:
     implementation ("com.intuit.ssp:ssp-android:1.1.0")
+    //for excel apache poi:
+    implementation("org.apache.poi:poi:5.1.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
