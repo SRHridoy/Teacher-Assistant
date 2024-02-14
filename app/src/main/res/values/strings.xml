@@ -4,4 +4,5 @@
     <string name="student_id">2102002</string>
     <string name="student_name">Md. Sohanur Rahman Hridoy</string>
     <string name="present_or_not">Mark</string>
+    <string name="this_is_for_confirmation">This is for confirmation</string>
 </resources>
