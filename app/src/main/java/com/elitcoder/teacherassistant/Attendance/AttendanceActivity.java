@@ -75,7 +75,7 @@ public class AttendanceActivity extends AppCompatActivity {
                         }
                         else{
                             ExcelCreationLater.readExcelAndUpdate(AttendanceActivity.this);
-                            Toast.makeText(AttendanceActivity.this, "Failed!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AttendanceActivity.this, "Failed to save!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
