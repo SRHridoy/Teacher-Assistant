@@ -48,5 +48,7 @@ dependencies {
     implementation ("com.intuit.ssp:ssp-android:1.1.0")
     //for excel apache poi:
     implementation("org.apache.poi:poi:5.1.0")
+    implementation ("com.github.ybq:Android-SpinKit:1.4.0") // for loading animation on splash
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
 }
