@@ -11,30 +11,21 @@ import android.view.WindowManager;
 import com.elitcoder.teacherassistant.Login.LoginActivity;
 import com.elitcoder.teacherassistant.R;
 
-public class SplashActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //for full screen
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_splash);
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_main);
 
-        // For Hiding Action Bar
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
 
         //For Splash Screen
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                //Code here
-                Intent myIntent = new Intent(SplashActivity.this, LoginActivity.class);
+                Intent  myIntent = new Intent(MainActivity.this,LoginActivity.class);
                 startActivity(myIntent);
-                finish();
             }
         },5000);
     }
