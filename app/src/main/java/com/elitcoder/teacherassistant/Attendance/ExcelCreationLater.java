@@ -21,14 +21,10 @@ import java.io.IOException;
 
 public class ExcelCreationLater {
     public static void readExcelAndUpdate(Context context){
-        File documentsDirectory = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),"Attendance of CSE-21.xlsx");
-        String filepath = documentsDirectory.getAbsolutePath();
-        if (filepath == null) {
-            Toast.makeText(context, "File path is null", Toast.LENGTH_SHORT).show();
-            return;
-        }
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),"Attendance of CSE-21.xlsx");
+
         try{
-            FileInputStream fileInputStream = new FileInputStream(filepath);
+            FileInputStream fileInputStream = new FileInputStream(file);
             HSSFWorkbook workbook = new HSSFWorkbook(fileInputStream);
             Sheet sheet = workbook.getSheetAt(0);
 
@@ -56,17 +52,13 @@ public class ExcelCreationLater {
             }
 
             // Write changes back to the file
-            FileOutputStream fileOut = new FileOutputStream(filepath);
-            workbook.write(fileOut);
-            fileOut.close();
-            workbook.close();
-
+            ExcelFileGenaration.generateExcelFile(context,workbook);
             Toast.makeText(context, "File updated successfully", Toast.LENGTH_SHORT).show();
-            Log.d("Updatepath",filepath);
+            //Log.d("Updatepath",filepath);
 
         }catch (FileNotFoundException e){
             e.printStackTrace();
-            Toast.makeText(context, "File not found! at "+filepath, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "File not found!", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             e.printStackTrace();
             Toast.makeText(context, "Error reading files", Toast.LENGTH_SHORT).show();

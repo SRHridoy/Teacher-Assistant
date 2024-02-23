@@ -13,19 +13,20 @@ import java.io.IOException;
 
 
 public class ExcelFileGenaration {
-    public static File file;
 
     public static void generateExcelFile(Context context, HSSFWorkbook workbook){
         try{
-            file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),"Attendance of CSE-21.xlsx");
+            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),"Attendance of CSE-21.xlsx");
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             workbook.write(fileOutputStream);
+            workbook.close();
             fileOutputStream.close();
-            Log.d("InPath",file.getAbsolutePath());
+
+            //Log.d("InPath",file.getAbsolutePath());
             Toast.makeText(context,"Attendance saved to "+file.getAbsolutePath(), Toast.LENGTH_LONG).show();
         }catch (IOException e){
             e.printStackTrace();
-            Toast.makeText(context, "Successfully Recorded!", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Failded to save", Toast.LENGTH_LONG).show();
         }
 
 

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -17,9 +16,6 @@ import android.widget.Toast;
 import com.elitcoder.teacherassistant.Attendance.adapter.StudentAdapter;
 import com.elitcoder.teacherassistant.R;
 import com.elitcoder.teacherassistant.databinding.ActivityAttendanceBinding;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class AttendanceActivity extends AppCompatActivity {
 //TODO: Developer Hridoy will finalize this section both UI and Backend...
@@ -74,8 +70,12 @@ public class AttendanceActivity extends AppCompatActivity {
                             editor.apply();
                         }
                         else{
-                            ExcelCreationLater.readExcelAndUpdate(AttendanceActivity.this);
-                            Toast.makeText(AttendanceActivity.this, "Failed to save!", Toast.LENGTH_SHORT).show();
+                            if(ActivityCompat.checkSelfPermission(AttendanceActivity.this,Manifest.permission.READ_EXTERNAL_STORAGE)==PackageManager.PERMISSION_GRANTED){
+                                ExcelCreationLater.readExcelAndUpdate(AttendanceActivity.this);
+                            }
+                            else{
+                                Toast.makeText(AttendanceActivity.this, "Failed to save!", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
                 });
