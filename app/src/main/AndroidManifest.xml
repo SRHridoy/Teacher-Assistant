@@ -18,11 +18,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TeacherAssistant"
         tools:targetApi="31">
         <activity
-            android:name=".Splash.SplashActivity"
-            android:exported="true" >
+            android:name=".ImageToText.ImageToTextActivity"
+            android:parentActivityName=".Options.OptionActivity"
+            android:label="Image to Text Converter"
+            android:exported="false"
+            android:theme="@style/MyThemeActionBarForImgToTxt"
+            />
+        <activity
+            android:name=".Options.OptionActivity"
+            android:exported="false"
+            android:label="Options"
+            android:theme="@style/MyThemeActionBarForOptions" />
+        <activity
+            android:name=".Splash.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.TeacherAssistant">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,41 +43,25 @@
         </activity>
         <activity
             android:name=".Cgpa.CgpaCalcActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="CGPA Calculator"
+            android:parentActivityName=".Options.OptionActivity"
+            android:theme="@style/MyThemeActionBarForCGPA" />
         <activity
             android:name=".CourseMaterial.CourseMaterialActivity"
-            android:exported="false" />
+            android:label="Course Materials"
+            android:parentActivityName=".Options.OptionActivity"
+            android:exported="false"
+            android:theme="@style/MyThemeActionBarForCourseMaterial" />
         <activity
             android:name=".Login.LoginActivity"
-            android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
+            android:exported="true"
+            android:theme="@style/Theme.TeacherAssistant" />
         <activity
             android:name=".Attendance.AttendanceActivity"
-            android:exported="true">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
-        <activity
-            android:name=".Splash.MainActivity"
-            android:exported="false">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
+            android:parentActivityName=".Options.OptionActivity"
+            android:exported="true"
+            android:theme="@style/MyAttendanceTheme" />
 
         <meta-data
             android:name="preloaded_fonts"
