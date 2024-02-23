@@ -4,6 +4,45 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
+    // Theme for Attendance :
+    <style name="MyAttendanceTheme" parent="Theme.Material3.DayNight.NoActionBar">
 
+    </style>
+//Theme for Options
+    <style name="MyThemeActionBarForOptions" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Customize your light theme here. -->
+       <item name="colorPrimary">@color/orng_bg</item>
+        <item name="colorPrimaryDark">#442216</item>
+        <item name="colorAccent">#FFAB00</item>
+        <item name="actionBarSize">@dimen/_56sdp</item>
+        <item name="android:textSize">@dimen/_20ssp</item>
+    </style>
+    //Theme for CGPA
+<style name="MyThemeActionBarForCGPA" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Customize your light theme here. -->
+       <item name="colorPrimary">@color/orng_bg</item>
+        <item name="colorPrimaryDark">#442216</item>
+        <item name="colorAccent">#FFAB00</item>
+    <item name="actionBarSize">@dimen/_56sdp</item>
+    <item name="android:textSize">@dimen/_20ssp</item>
+    </style>
+    //Theme for CourseMaterial
+    <style name="MyThemeActionBarForCourseMaterial" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Customize your light theme here. -->
+       <item name="colorPrimary">@color/orng_bg</item>
+        <item name="colorPrimaryDark">#442216</item>
+        <item name="colorAccent">#FFAB00</item>
+        <item name="actionBarSize">@dimen/_56sdp</item>
+        <item name="android:textSize">@dimen/_20ssp</item>
+    </style>
+    //Theme for Image to Text
+    <style name="MyThemeActionBarForImgToTxt" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/orng_bg</item>
+        <item name="colorPrimaryDark">#442216</item>
+        <item name="colorAccent">#FFAB00</item>
+        <item name="actionBarSize">@dimen/_56sdp</item>
+        <item name="android:textSize">@dimen/_20ssp</item>
+    </style>
     <style name="Theme.TeacherAssistant" parent="Base.Theme.TeacherAssistant" />
 </resources>
