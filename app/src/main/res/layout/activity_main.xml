@@ -9,14 +9,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="281dp"
-        android:layout_height="298dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.265"
-        app:srcCompat="@drawable/app_logo_white" />
+        app:srcCompat="@drawable/app_logo_white2" />
 
     <com.github.ybq.android.spinkit.SpinKitView
         android:id="@+id/spin_kit"
@@ -28,20 +28,19 @@
         app:SpinKit_Color="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/splashText"
-        android:layout_width="268dp"
-        android:layout_height="38dp"
-        android:text="Innovative Tools for Educators Everywhere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="275dp"
+        android:fontFamily="@font/roboto_condensed_bold"
+        android:text="@string/innovative_tools_for_educators_everywhere"
         android:textColor="#F6F3F3"
         app:layout_constraintBottom_toTopOf="@+id/spin_kit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.539" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

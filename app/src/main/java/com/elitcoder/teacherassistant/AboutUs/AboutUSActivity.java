@@ -1,4 +1,4 @@
-package com.elitcoder.teacherassistant.ImageToText;
+package com.elitcoder.teacherassistant.AboutUs;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.elitcoder.teacherassistant.R;
 
-public class ImageToTextActivity extends AppCompatActivity {
+public class AboutUSActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image_to_text);
+        setContentView(R.layout.activity_about_us);
     }
 }

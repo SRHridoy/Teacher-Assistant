@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="#FF6C00"
     android:gravity="center"
     tools:context=".Options.OptionActivity">
 
@@ -42,12 +42,12 @@
             app:cardPreventCornerOverlap="true"
             android:layout_height="@dimen/_120sdp">
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnImgToTxt"
+                android:id="@+id/btnCGPACalc"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/orng_bg"
                 android:layout_gravity="center"
-                android:text="Image to Text"
+                android:text="CGPA calc"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textSize="@dimen/_12ssp"
@@ -61,12 +61,12 @@
             app:cardPreventCornerOverlap="true"
             android:layout_height="@dimen/_120sdp">
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnCGPACalc"
+                android:id="@+id/btnCourseMaterial"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/orng_bg"
                 android:layout_gravity="center"
-                android:text="CGPA calc"
+                android:text="Course Material"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textSize="@dimen/_12ssp"
@@ -81,12 +81,12 @@
         app:cardPreventCornerOverlap="true"
         android:layout_height="@dimen/_120sdp">
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnCourseMaterial"
+            android:id="@+id/btnAboutUs"
             android:layout_width="match_parent"
             android:background="@color/orng_bg"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:text="Course Material"
+            android:text="About Us"
             android:gravity="center"
             android:textStyle="bold"
             android:textSize="@dimen/_12ssp"
