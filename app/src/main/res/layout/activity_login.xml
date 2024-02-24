@@ -11,9 +11,8 @@
         android:id="@+id/emailLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="@dimen/_32sdp"
+        android:layout_marginEnd="@dimen/_32sdp"
         android:backgroundTint="#FA6F42"
         app:boxBackgroundMode="outline"
         app:boxStrokeColor="#FA6F42"
@@ -24,13 +23,14 @@
         app:helperTextTextColor="#FA6F42"
         app:hintTextColor="#FA6F42"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginIcon"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:placeholderTextColor="#FA6F42"
         app:prefixTextColor="#FA6F42"
         app:startIconDrawable="@drawable/outline_email_24"
         app:startIconTint="#FA6F42"
-        app:suffixTextColor="#FA6F42">
+        app:suffixTextColor="#FA6F42"
+        tools:layout_editor_absoluteY="250dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -43,9 +43,9 @@
         android:id="@+id/passwordLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_32sdp"
         android:backgroundTint="#FA6F42"
         app:boxBackgroundMode="outline"
         app:boxStrokeColor="#FA6F42"
@@ -86,4 +86,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordLayout"
         app:strokeColor="#FA6F42" />
+
+    <ImageView
+        android:id="@+id/loginIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/emailLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/app_login" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

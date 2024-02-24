@@ -20,11 +20,11 @@
         android:supportsRtl="true"
         tools:targetApi="31">
         <activity
-            android:name=".ImageToText.ImageToTextActivity"
+            android:name=".AboutUs.AboutUSActivity"
             android:parentActivityName=".Options.OptionActivity"
-            android:label="Image to Text Converter"
+            android:label="Abut us"
             android:exported="false"
-            android:theme="@style/MyThemeActionBarForImgToTxt"
+            android:theme="@style/MyThemeActionBarForAboutUs"
             />
         <activity
             android:name=".Options.OptionActivity"

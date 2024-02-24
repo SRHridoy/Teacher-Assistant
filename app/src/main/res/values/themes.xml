@@ -35,8 +35,8 @@
         <item name="actionBarSize">@dimen/_56sdp</item>
         <item name="android:textSize">@dimen/_20ssp</item>
     </style>
-    //Theme for Image to Text
-    <style name="MyThemeActionBarForImgToTxt" parent="Theme.AppCompat.DayNight.DarkActionBar">
+    //Theme for About Us
+    <style name="MyThemeActionBarForAboutUs" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/orng_bg</item>
         <item name="colorPrimaryDark">#442216</item>

@@ -9,7 +9,7 @@ import android.view.View;
 import com.elitcoder.teacherassistant.Attendance.AttendanceActivity;
 import com.elitcoder.teacherassistant.Cgpa.CgpaCalcActivity;
 import com.elitcoder.teacherassistant.CourseMaterial.CourseMaterialActivity;
-import com.elitcoder.teacherassistant.ImageToText.ImageToTextActivity;
+import com.elitcoder.teacherassistant.AboutUs.AboutUSActivity;
 import com.elitcoder.teacherassistant.databinding.ActivityOptionBinding;
 
 public class OptionActivity extends AppCompatActivity {
@@ -24,7 +24,7 @@ public class OptionActivity extends AppCompatActivity {
         //Connecting Attendance Activity:
         connectAttendance();
         //Connecting Image to Text Activity:
-        connectImageToText();
+        connectAboutUs();
         //Connecting Cgpa calc:
         connectCgpaCalc();
         //Connecting Course Materials:
@@ -55,12 +55,12 @@ public class OptionActivity extends AppCompatActivity {
     }
 
     //ImgToTxt Connection:
-    private void connectImageToText() {
-        optionBinding.btnImgToTxt.setOnClickListener(new View.OnClickListener() {
+    private void connectAboutUs() {
+        optionBinding.btnAboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent imgToTxtIntent = new Intent(OptionActivity.this, ImageToTextActivity.class);
-                startActivity(imgToTxtIntent);
+                Intent aboutUsIntent = new Intent(OptionActivity.this, AboutUSActivity.class);
+                startActivity(aboutUsIntent);
             }
         });
     }
