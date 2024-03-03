@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.elitcoder.teacherassistant.Attendance.AttendanceActivity;
-import com.elitcoder.teacherassistant.Cgpa.CgpaCalcActivity;
+import com.elitcoder.teacherassistant.ShortNotes.ShortNotesActivity;
 import com.elitcoder.teacherassistant.CourseMaterial.CourseMaterialActivity;
 import com.elitcoder.teacherassistant.AboutUs.AboutUSActivity;
 import com.elitcoder.teacherassistant.databinding.ActivityOptionBinding;
@@ -48,7 +48,7 @@ public class OptionActivity extends AppCompatActivity {
         optionBinding.btnCGPACalc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent cgpaCalcIntent = new Intent(OptionActivity.this, CgpaCalcActivity.class);
+                Intent cgpaCalcIntent = new Intent(OptionActivity.this, ShortNotesActivity.class);
                 startActivity(cgpaCalcIntent);
             }
         });

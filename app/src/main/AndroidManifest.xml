@@ -42,11 +42,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Cgpa.CgpaCalcActivity"
+            android:name=".ShortNotes.ShortNotesActivity"
             android:exported="false"
-            android:label="CGPA Calculator"
+            android:label="Short Notes"
             android:parentActivityName=".Options.OptionActivity"
-            android:theme="@style/MyThemeActionBarForCGPA" />
+            android:theme="@style/MyThemeActionBarForShortNotes" />
         <activity
             android:name=".CourseMaterial.CourseMaterialActivity"
             android:label="Course Materials"

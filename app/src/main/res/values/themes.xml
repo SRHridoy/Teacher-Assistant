@@ -17,8 +17,8 @@
         <item name="actionBarSize">@dimen/_56sdp</item>
         <item name="android:textSize">@dimen/_20ssp</item>
     </style>
-    //Theme for CGPA
-<style name="MyThemeActionBarForCGPA" parent="Theme.AppCompat.DayNight.DarkActionBar">
+    //Theme for ShortNotes
+<style name="MyThemeActionBarForShortNotes" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- Customize your light theme here. -->
        <item name="colorPrimary">@color/orng_bg</item>
         <item name="colorPrimaryDark">#442216</item>
