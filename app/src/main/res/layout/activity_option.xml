@@ -24,7 +24,7 @@
             android:layout_height="@dimen/_120sdp">
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnAttendance"
-                android:background="@color/orng_bg"
+                android:background="@color/ic_launcher_background"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -32,7 +32,7 @@
                 android:text="Attendance"
                 android:textStyle="bold"
                 android:textSize="@dimen/_12ssp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/orng_bg"/>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:layout_marginStart="@dimen/_30sdp"
@@ -45,13 +45,13 @@
                 android:id="@+id/btnCGPACalc"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/orng_bg"
+                android:background="@color/white"
                 android:layout_gravity="center"
-                android:text="CGPA calc"
+                android:text="Short Notes"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textSize="@dimen/_12ssp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/orng_bg"/>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:layout_marginTop="@dimen/_30sdp"
@@ -64,13 +64,13 @@
                 android:id="@+id/btnCourseMaterial"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/orng_bg"
+                android:background="@color/white"
                 android:layout_gravity="center"
                 android:text="Course Material"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textSize="@dimen/_12ssp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/orng_bg"/>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
         android:layout_marginTop="@dimen/_30sdp"
@@ -83,14 +83,14 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnAboutUs"
             android:layout_width="match_parent"
-            android:background="@color/orng_bg"
+            android:background="@color/white"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:text="About Us"
             android:gravity="center"
             android:textStyle="bold"
             android:textSize="@dimen/_12ssp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/orng_bg"/>
     </androidx.cardview.widget.CardView>
 
 
