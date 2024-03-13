@@ -22,7 +22,7 @@
         <activity
             android:name=".AboutUs.AboutUSActivity"
             android:parentActivityName=".Options.OptionActivity"
-            android:label="Abut us"
+            android:label="About us"
             android:exported="false"
             android:theme="@style/MyThemeActionBarForAboutUs"
             />
@@ -48,11 +48,11 @@
             android:parentActivityName=".Options.OptionActivity"
             android:theme="@style/MyThemeActionBarForShortNotes" />
         <activity
-            android:name=".CourseMaterial.CourseMaterialActivity"
-            android:label="Course Materials"
+            android:name=".ExamReminder.ExamReminderActivity"
+            android:label="Exam Reminder"
             android:parentActivityName=".Options.OptionActivity"
             android:exported="false"
-            android:theme="@style/MyThemeActionBarForCourseMaterial" />
+            android:theme="@style/MyThemeActionBarForExamReminder" />
         <activity
             android:name=".Login.LoginActivity"
             android:exported="true"

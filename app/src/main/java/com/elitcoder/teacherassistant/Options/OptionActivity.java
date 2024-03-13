@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.elitcoder.teacherassistant.Attendance.AttendanceActivity;
 import com.elitcoder.teacherassistant.ShortNotes.ShortNotesActivity;
-import com.elitcoder.teacherassistant.CourseMaterial.CourseMaterialActivity;
+import com.elitcoder.teacherassistant.ExamReminder.ExamReminderActivity;
 import com.elitcoder.teacherassistant.AboutUs.AboutUSActivity;
 import com.elitcoder.teacherassistant.databinding.ActivityOptionBinding;
 
@@ -37,7 +37,7 @@ public class OptionActivity extends AppCompatActivity {
         optionBinding.btnCourseMaterial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent courseMaterialIntent = new Intent(OptionActivity.this, CourseMaterialActivity.class);
+                Intent courseMaterialIntent = new Intent(OptionActivity.this, ExamReminderActivity.class);
                 startActivity(courseMaterialIntent);
             }
         });

@@ -3,15 +3,15 @@ package com.elitcoder.teacherassistant.ShortNotes;
 
 public class Topic {
     private String title;
-    private String keypoints;
+    private String description;
 
     //Default Constructor :
     public Topic() {
     }
     //Parameterized Constructor :
-    public Topic(String title, String keypoints) {
+    public Topic(String title, String description) {
         this.title = title;
-        this.keypoints = keypoints;
+        this.description = description;
     }
 
     //Getter and setters :
@@ -24,11 +24,11 @@ public class Topic {
         this.title = title;
     }
 
-    public String getKeypoints() {
-        return keypoints;
+    public String getdescription() {
+        return description;
     }
 
-    public void setKeypoints(String keypoints) {
-        this.keypoints = keypoints;
+    public void setdescription(String description) {
+        this.description = description;
     }
 }

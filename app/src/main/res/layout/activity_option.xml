@@ -66,7 +66,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/white"
                 android:layout_gravity="center"
-                android:text="Course Material"
+                android:text="Exam Reminder"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textSize="@dimen/_12ssp"
