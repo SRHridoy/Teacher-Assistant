@@ -8,9 +8,12 @@
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="32"
-        tools:ignore="ScopedStorage" />
+        />
+<!--    Internet permission for website cse dept. info-->
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -48,11 +51,11 @@
             android:parentActivityName=".Options.OptionActivity"
             android:theme="@style/MyThemeActionBarForShortNotes" />
         <activity
-            android:name=".ExamReminder.ExamReminderActivity"
-            android:label="Exam Reminder"
+            android:name=".HstuCSEDept.CSEDeptActivity"
+            android:label="CSE Dept. Web"
             android:parentActivityName=".Options.OptionActivity"
             android:exported="false"
-            android:theme="@style/MyThemeActionBarForExamReminder" />
+            android:theme="@style/MyThemeActionBarForWebCSE" />
         <activity
             android:name=".Login.LoginActivity"
             android:exported="true"
