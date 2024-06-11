@@ -55,7 +55,8 @@ public class AttendanceActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                             //Toast.makeText(AttendanceActivity.this, "ExcelFirst is called!", Toast.LENGTH_LONG).show();
-                            ExcelCreation.writeToExcel(AttendanceActivity.this);
+                           // ExcelCreation.writeToExcel(AttendanceActivity.this);
+                            UpdateExcel.updatingExcel(AttendanceActivity.this);
                             dialog.dismiss();
                             //Go to optionActivity after taking attendance...
                             Intent opIntent = new Intent(AttendanceActivity.this, OptionActivity.class);

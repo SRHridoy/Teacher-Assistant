@@ -16,7 +16,7 @@ public class ExcelFileGenaration {
 
     public static void generateExcelFile(Context context, HSSFWorkbook workbook){
         try{
-            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),"Attendance of CSE-21.xlsx");
+            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),"Attendance of CSE-21.xls");
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             workbook.write(fileOutputStream);
             workbook.close();
