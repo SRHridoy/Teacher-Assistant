@@ -5,6 +5,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -14,13 +15,13 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.elitcoder.teacherassistant.Attendance.adapter.StudentAdapter;
+import com.elitcoder.teacherassistant.Options.OptionActivity;
 import com.elitcoder.teacherassistant.R;
 import com.elitcoder.teacherassistant.databinding.ActivityAttendanceBinding;
 
 public class AttendanceActivity extends AppCompatActivity {
-//TODO: Developer Hridoy will finalize this section both UI and Backend...
+    //TODO: Developer Hridoy will finalize this section both UI and Backend...
     ActivityAttendanceBinding attendanceBinding;
-    Boolean check;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +38,6 @@ public class AttendanceActivity extends AppCompatActivity {
         //Setting up finish button :
         finishAttendance();
 
-        //SharedPreference to handle excel :
-        SharedPreferences sharedPreferences = getSharedPreferences("ExcelHandling", MODE_PRIVATE);
-        check = sharedPreferences.getBoolean("flag",true);
     }
 
     //Finish button :
@@ -56,27 +54,13 @@ public class AttendanceActivity extends AppCompatActivity {
                 btnYes.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(check){
-                            if(ActivityCompat.checkSelfPermission(AttendanceActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)==PackageManager.PERMISSION_GRANTED){
-                                ExcelCreationFristTime.writeToExcel(AttendanceActivity.this);
-                            }else{
-                                ActivityCompat.requestPermissions(AttendanceActivity.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},PackageManager.PERMISSION_GRANTED);
-                            }
+                            //Toast.makeText(AttendanceActivity.this, "ExcelFirst is called!", Toast.LENGTH_LONG).show();
+                           // ExcelCreation.writeToExcel(AttendanceActivity.this);
+                            UpdateExcel.updatingExcel(AttendanceActivity.this);
                             dialog.dismiss();
-                            //Marking as false :
-                            SharedPreferences sharedPreferences = getSharedPreferences("ExcelHandling",MODE_PRIVATE);
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putBoolean("flag",false);
-                            editor.apply();
-                        }
-                        else{
-                            if(ActivityCompat.checkSelfPermission(AttendanceActivity.this,Manifest.permission.READ_EXTERNAL_STORAGE)==PackageManager.PERMISSION_GRANTED){
-                                ExcelCreationLater.readExcelAndUpdate(AttendanceActivity.this);
-                            }
-                            else{
-                                Toast.makeText(AttendanceActivity.this, "Failed to save!", Toast.LENGTH_SHORT).show();
-                            }
-                        }
+                            //Go to optionActivity after taking attendance...
+                            Intent opIntent = new Intent(AttendanceActivity.this, OptionActivity.class);
+                            startActivity(opIntent);
                     }
                 });
 

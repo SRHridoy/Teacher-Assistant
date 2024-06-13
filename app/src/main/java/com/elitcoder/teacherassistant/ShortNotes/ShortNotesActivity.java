@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.elitcoder.teacherassistant.R;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,17 +55,24 @@ public class ShortNotesActivity extends AppCompatActivity {
         }
     }
 
+    //Date Formatting :
+    private String currentDate(){
+        LocalDateTime localDateTime = LocalDateTime.now();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return localDateTime.format(dateTimeFormatter);
+    }
+
     private void loadTopicsFromSPref() {
         SharedPreferences sharedPreferences = getSharedPreferences(SPREF_NAME, MODE_PRIVATE);
         int topicCount = sharedPreferences.getInt(KEY_NOTE_COUNT,0);
 
         for (int i = 0; i < topicCount; i++){
             String title = sharedPreferences.getString("topic_title"+i,"");
-            String keypoints = sharedPreferences.getString("key_points"+i,"");
+            String description = sharedPreferences.getString("key_points"+i,"");
 
             Topic topic = new Topic();
             topic.setTitle(title);
-            topic.setKeypoints(keypoints);
+            topic.setdescription(description);
 
             topicList.add(topic);
         }
@@ -72,14 +81,14 @@ public class ShortNotesActivity extends AppCompatActivity {
     private void saveTopics() {
         EditText edtTitle = findViewById(R.id.edtPrevTitle);
         EditText edtKeypoints = findViewById(R.id.edtPrevKeypoints);
+        //Updated Date Module:
+        String title = currentDate()+"\n"+edtTitle.getText().toString();
+        String description= edtKeypoints.getText().toString();
 
-        String title = edtTitle.getText().toString();
-        String keypoints = edtKeypoints.getText().toString();
-
-        if(!title.isEmpty() && !keypoints.isEmpty()){
+        if(!title.isEmpty() && !description.isEmpty()){
             Topic topic = new Topic();
             topic.setTitle(title);
-            topic.setKeypoints(keypoints);
+            topic.setdescription(description);
 
             topicList.add(topic);
             saveTopicsToSPref();
@@ -102,7 +111,7 @@ public class ShortNotesActivity extends AppCompatActivity {
         TextView txtKeypoints = topicView.findViewById(R.id.txtKeypoints); // Find views within topicView
 
         txtTitle.setText(topic.getTitle());
-        txtKeypoints.setText(topic.getKeypoints());
+        txtKeypoints.setText(topic.getdescription());
 
         topicView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -148,7 +157,7 @@ public class ShortNotesActivity extends AppCompatActivity {
         for(int i = 0; i < topicList.size(); i++){
             Topic topic = topicList.get(i);
             editor.putString("topic_title"+i, topic.getTitle());
-            editor.putString("key_points"+i, topic.getKeypoints());
+            editor.putString("key_points"+i, topic.getdescription());
         }
         editor.apply();
     }

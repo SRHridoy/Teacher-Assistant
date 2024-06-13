@@ -26,7 +26,7 @@ public class ExcelFileGenaration {
             Toast.makeText(context,"Attendance saved to "+file.getAbsolutePath(), Toast.LENGTH_LONG).show();
         }catch (IOException e){
             e.printStackTrace();
-            Toast.makeText(context, "Failded to save", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Failed to save", Toast.LENGTH_LONG).show();
         }
 
 

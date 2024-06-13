@@ -12,11 +12,12 @@ import org.apache.poi.ss.usermodel.Row;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class ExcelCreationFristTime {
+public class ExcelCreation {
     public static void writeToExcel(Context context){
         //Creating Workbook and sheet in Excel :
         HSSFWorkbook workbook = new HSSFWorkbook();
-        HSSFSheet sheet = workbook.createSheet();
+
+        HSSFSheet sheet = workbook.createSheet("CSE_21");
         //Creating Header :
         Row headerRow = sheet.createRow(0);
         headerRow.createCell(0).setCellValue("Student ID");
@@ -30,7 +31,7 @@ public class ExcelCreationFristTime {
             dataRow.createCell(2).setCellValue(StudentAdapter.isPresentLists[i]?"Present":"Absent");
         }
 
-        //Saveing data to file :
+        //Saving data to file : 
         ExcelFileGenaration.generateExcelFile(context,workbook);
     }
     public static String getCurrentDate() {
