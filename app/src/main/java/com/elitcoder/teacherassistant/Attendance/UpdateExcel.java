@@ -24,7 +24,7 @@ public class UpdateExcel {
     private static final String TAG = "UpdateExcel";
     //checking and update:
     public static void updatingExcel(Context context){
-        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "Attendance of CSE-21.xls");
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "Attendance of CSE-21.xlsx");
 
         //Update:
         if (file.exists()) {
@@ -42,35 +42,41 @@ public class UpdateExcel {
                 //Checking if Already attendance is taken:
                 // Retrieve the header value of the last column
                 Cell lastHeaderCell = headerRow.getCell(lastColumn-1);
+                //Check:
+                Log.d("Date:",ExcelCreation.getCurrentDate());
+                Log.d("Date from Excel:",lastHeaderCell.toString());
                 if(ExcelCreation.getCurrentDate().equals(lastHeaderCell.toString())){
                     Toast.makeText(context, "Attendance is already taken!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(context, OptionActivity.class);
                     context.startActivity(intent);
                 }
 
-                // Add new column header
-                Cell newHeaderCell = headerRow.createCell(lastColumn);
-                newHeaderCell.setCellValue(ExcelCreation.getCurrentDate());
+                else {
+                    // Add new column header
+                    Cell newHeaderCell = headerRow.createCell(lastColumn);
+                    newHeaderCell.setCellValue(ExcelCreation.getCurrentDate());
 
-                // Populate the new column with data
-                for (int i = 1; i <= sheet.getLastRowNum(); i++) {
-                    Row row = sheet.getRow(i);
-                    if (row == null) {
-                        row = sheet.createRow(i);
+                    // Populate the new column with data
+                    for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+                        Row row = sheet.getRow(i);
+                        if (row == null) {
+                            row = sheet.createRow(i);
+                        }
+                        Cell newCell = row.createCell(lastColumn);
+                        newCell.setCellValue(StudentAdapter.isPresentLists[i]?"Present":"Absent");
                     }
-                    Cell newCell = row.createCell(lastColumn);
-                    newCell.setCellValue(StudentAdapter.isPresentLists[i]?"Present":"Absent");
+
+                    fis.close();
+
+                    // Write the updated workbook back to the file
+                    FileOutputStream fos = new FileOutputStream(file);
+                    workbook.write(fos);
+                    fos.close();
+
+                    workbook.close();
+                    Toast.makeText(context, "Attendance has been taken successfully.", Toast.LENGTH_LONG).show();
+
                 }
-
-                fis.close();
-
-                // Write the updated workbook back to the file
-                FileOutputStream fos = new FileOutputStream(file);
-                workbook.write(fos);
-                fos.close();
-
-                workbook.close();
-                Toast.makeText(context, "Attendance has been taken successfully.", Toast.LENGTH_LONG).show();
             } catch (IOException e) {
                 e.printStackTrace();
             }

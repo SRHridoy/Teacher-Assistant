@@ -16,7 +16,7 @@ public class ExcelFileGenaration {
 
     public static void generateExcelFile(Context context, HSSFWorkbook workbook){
         try{
-            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),"Attendance of CSE-21.xls");
+            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),"Attendance of CSE-21.xlsx");
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             workbook.write(fileOutputStream);
             workbook.close();
@@ -26,7 +26,7 @@ public class ExcelFileGenaration {
             Toast.makeText(context,"Attendance saved to "+file.getAbsolutePath(), Toast.LENGTH_LONG).show();
         }catch (IOException e){
             e.printStackTrace();
-            Toast.makeText(context, "Failded to save", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Failed to save", Toast.LENGTH_LONG).show();
         }
 
 
