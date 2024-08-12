@@ -48,9 +48,13 @@ dependencies {
     implementation ("com.intuit.ssp:ssp-android:1.1.0")
     //for excel apache poi:
     implementation("org.apache.poi:poi:5.1.0")
+    compileOnly ("org.apache.poi:poi-ooxml:5.1.0")
     implementation ("com.github.ybq:Android-SpinKit:1.4.0") // for loading animation on splash
     //for fingerprint:
     implementation ("androidx.biometric:biometric:1.1.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation("androidx.activity:activity:1.9.1")
+    implementation("androidx.fragment:fragment:1.8.2");
+
 
 }

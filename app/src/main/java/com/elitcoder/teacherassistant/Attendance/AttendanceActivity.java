@@ -1,14 +1,18 @@
 package com.elitcoder.teacherassistant.Attendance;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.Manifest;
 import android.widget.Button;
@@ -22,6 +26,7 @@ import com.elitcoder.teacherassistant.databinding.ActivityAttendanceBinding;
 public class AttendanceActivity extends AppCompatActivity {
     //TODO: Developer Hridoy will finalize this section both UI and Backend...
     ActivityAttendanceBinding attendanceBinding;
+    @RequiresApi(api = Build.VERSION_CODES.R)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +35,7 @@ public class AttendanceActivity extends AppCompatActivity {
         setContentView(view);
 
         //Requesting Permission for Excel :
-        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.MANAGE_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
 
         //RecyclerFunctionality call:
         recyclerFunctionality();
@@ -56,8 +61,10 @@ public class AttendanceActivity extends AppCompatActivity {
                     public void onClick(View v) {
                             //Toast.makeText(AttendanceActivity.this, "ExcelFirst is called!", Toast.LENGTH_LONG).show();
                            // ExcelCreation.writeToExcel(AttendanceActivity.this);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                             UpdateExcel.updatingExcel(AttendanceActivity.this);
-                            dialog.dismiss();
+                        }
+                        dialog.dismiss();
                             //Go to optionActivity after taking attendance...
                             Intent opIntent = new Intent(AttendanceActivity.this, OptionActivity.class);
                             startActivity(opIntent);
@@ -87,4 +94,18 @@ public class AttendanceActivity extends AppCompatActivity {
         StudentAdapter studentAdapter = new StudentAdapter(this,StudentInfoLists.studentInfoLists);
         attendanceBinding.recyclerAttendance.setAdapter(studentAdapter);
     }
+
+//    public boolean checkStoragePermissions(){
+//        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
+//            //Android is 11 (R) or above
+//            return Environment.isExternalStorageManager();
+//        }else {
+//            //Below android 11
+//            int write = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+//            int read = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
+//
+//            return read == PackageManager.PERMISSION_GRANTED && write == PackageManager.PERMISSION_GRANTED;
+//        }
+//    }
 }
+

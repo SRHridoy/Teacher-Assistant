@@ -2,7 +2,6 @@ package com.elitcoder.teacherassistant.Attendance;
 
 import android.content.Context;
 import android.os.Environment;
-import android.util.Log;
 import android.widget.Toast;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -12,7 +11,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 
-public class ExcelFileGenaration {
+public class ExcelFileGeneration {
 
     public static void generateExcelFile(Context context, HSSFWorkbook workbook){
         try{

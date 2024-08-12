@@ -32,7 +32,7 @@ public class ExcelCreation {
         }
 
         //Saving data to file : 
-        ExcelFileGenaration.generateExcelFile(context,workbook);
+        ExcelFileGeneration.generateExcelFile(context,workbook);
     }
     public static String getCurrentDate() {
         @SuppressLint("SimpleDateFormat") SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE,dd-MM-yyyy");

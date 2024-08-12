@@ -2,9 +2,13 @@ package com.elitcoder.teacherassistant.Attendance;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Environment;
+import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.annotation.RequiresApi;
 
 import com.elitcoder.teacherassistant.Attendance.adapter.StudentAdapter;
 import com.elitcoder.teacherassistant.Options.OptionActivity;
@@ -23,12 +27,14 @@ import java.io.IOException;
 public class UpdateExcel {
     private static final String TAG = "UpdateExcel";
     //checking and update:
+    @RequiresApi(api = Build.VERSION_CODES.R)
     public static void updatingExcel(Context context){
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "Attendance of CSE-21.xlsx");
 
         //Update:
         if (file.exists()) {
-            Log.d(TAG, "File exists: " + file.getAbsolutePath());
+            Log.d(TAG, "File Path " + file.getAbsolutePath());
+
             try {
                 FileInputStream fis = new FileInputStream(file);
                 Workbook workbook = new HSSFWorkbook(fis);
@@ -42,16 +48,18 @@ public class UpdateExcel {
                 //Checking if Already attendance is taken:
                 // Retrieve the header value of the last column
                 Cell lastHeaderCell = headerRow.getCell(lastColumn-1);
+
                 //Check:
                 Log.d("Date:",ExcelCreation.getCurrentDate());
                 Log.d("Date from Excel:",lastHeaderCell.toString());
-                if(ExcelCreation.getCurrentDate().equals(lastHeaderCell.toString())){
-                    Toast.makeText(context, "Attendance is already taken!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(context, OptionActivity.class);
-                    context.startActivity(intent);
-                }
 
-                else {
+//                if(ExcelCreation.getCurrentDate().equals(lastHeaderCell.toString())){
+//                    Toast.makeText(context, "Attendance is already taken!", Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(context, OptionActivity.class);
+//                    context.startActivity(intent);
+//                }
+
+//                else {
                     // Add new column header
                     Cell newHeaderCell = headerRow.createCell(lastColumn);
                     newHeaderCell.setCellValue(ExcelCreation.getCurrentDate());
@@ -76,7 +84,7 @@ public class UpdateExcel {
                     workbook.close();
                     Toast.makeText(context, "Attendance has been taken successfully.", Toast.LENGTH_LONG).show();
 
-                }
+                //}
             } catch (IOException e) {
                 e.printStackTrace();
             }
