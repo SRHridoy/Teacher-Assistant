@@ -28,11 +28,11 @@ public class ExcelCreation {
             Row dataRow = sheet.createRow(i+1);
             dataRow.createCell(0).setCellValue(StudentInfoLists.studentInfoLists.get(i).getStdId());
             dataRow.createCell(1).setCellValue(StudentInfoLists.studentInfoLists.get(i).getStdName());
-            dataRow.createCell(2).setCellValue(StudentAdapter.isPresentLists[i]?"Present":"Absent");
+            dataRow.createCell(2).setCellValue(StudentAdapter.isPresentLists[i]?"    P":"    A");
         }
 
         //Saving data to file : 
-        ExcelFileGenaration.generateExcelFile(context,workbook);
+        ExcelFileGeneration.generateExcelFile(context,workbook);
     }
     public static String getCurrentDate() {
         @SuppressLint("SimpleDateFormat") SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE,dd-MM-yyyy");

@@ -1,25 +1,13 @@
 package com.elitcoder.teacherassistant.Splash;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 
-import com.elitcoder.teacherassistant.Attendance.ExcelCreation;
-import com.elitcoder.teacherassistant.Attendance.ExcelFileGenaration;
-import com.elitcoder.teacherassistant.Attendance.StudentInfoLists;
-import com.elitcoder.teacherassistant.Attendance.adapter.StudentAdapter;
 import com.elitcoder.teacherassistant.Login.LoginActivity;
 import com.elitcoder.teacherassistant.R;
-
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Row;
-
-import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
