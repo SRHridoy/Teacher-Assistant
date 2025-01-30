@@ -23,44 +23,44 @@ public class OptionActivity extends AppCompatActivity {
 
         //Connecting Attendance Activity:
         connectAttendance();
-        //Connecting Image to Text Activity:
+        //Connecting About Us Activity:
         connectAboutUs();
-        //Connecting Cgpa calc:
-        connectCgpaCalc();
-        //Connecting Course Materials:
-        connectCourseMaterials();
+        //Connecting ShortNotes Activity:
+        connectShortNotesActivity();
+        //Connecting CSE DEPT WEB:
+        connectCSEDeptWebActivity();
 
     }
 
-    //Course Material Connection :
-    private void connectCourseMaterials() {
-        optionBinding.btnCourseMaterial.setOnClickListener(new View.OnClickListener() {
+    //CSE Dept. Web Connection :
+    private void connectCSEDeptWebActivity() {
+        optionBinding.btnCSEDeptWeb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent courseMaterialIntent = new Intent(OptionActivity.this, CSEDeptActivity.class);
-                startActivity(courseMaterialIntent);
+                Intent goToCSEDeptWebActivity = new Intent(OptionActivity.this, CSEDeptActivity.class);
+                startActivity(goToCSEDeptWebActivity);
             }
         });
     }
 
-    //CGPA calc Connection :
-    private void connectCgpaCalc() {
-        optionBinding.btnCGPACalc.setOnClickListener(new View.OnClickListener() {
+    //Short-notes Connection :
+    private void connectShortNotesActivity() {
+        optionBinding.btnShortNotes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent cgpaCalcIntent = new Intent(OptionActivity.this, ShortNotesActivity.class);
-                startActivity(cgpaCalcIntent);
+                Intent goToShortNotesActivity = new Intent(OptionActivity.this, ShortNotesActivity.class);
+                startActivity(goToShortNotesActivity);
             }
         });
     }
 
-    //ImgToTxt Connection:
+    //About Us Connection:
     private void connectAboutUs() {
         optionBinding.btnAboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent aboutUsIntent = new Intent(OptionActivity.this, AboutUSActivity.class);
-                startActivity(aboutUsIntent);
+                Intent goToAboutUs = new Intent(OptionActivity.this, AboutUSActivity.class);
+                startActivity(goToAboutUs);
             }
         });
     }
@@ -70,8 +70,8 @@ public class OptionActivity extends AppCompatActivity {
         optionBinding.btnAttendance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent attendanceIntent = new Intent(OptionActivity.this, AttendanceActivity.class);
-                startActivity(attendanceIntent);
+                Intent goToAttendanceActivity = new Intent(OptionActivity.this, AttendanceActivity.class);
+                startActivity(goToAttendanceActivity);
             }
         });
     }

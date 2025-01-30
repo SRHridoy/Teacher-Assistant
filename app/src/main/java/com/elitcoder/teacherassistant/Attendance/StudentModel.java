@@ -4,6 +4,7 @@ public class StudentModel {
     int img;
     String stdId;
     String stdName;
+    public StudentModel(){}
 
     public StudentModel(int img, String stdId, String stdName) {
         this.img = img;

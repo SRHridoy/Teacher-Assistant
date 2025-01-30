@@ -18,6 +18,10 @@ public class CSEDeptActivity extends AppCompatActivity {
         View view = cseDeptBinding.getRoot();
         setContentView(view);
 
+        goToCSEDeptWebSection();
+    }
+
+    private void goToCSEDeptWebSection() {
         cseDeptBinding.webCse.getSettings().setJavaScriptEnabled(true);
         cseDeptBinding.webCse.setWebViewClient(new WebViewClient());
         cseDeptBinding.webCse.loadUrl("https://hstu.ac.bd/cse/dept_cse");
