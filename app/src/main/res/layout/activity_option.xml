@@ -42,7 +42,7 @@
             app:cardPreventCornerOverlap="true"
             android:layout_height="@dimen/_120sdp">
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnCGPACalc"
+                android:id="@+id/btnShortNotes"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -61,7 +61,7 @@
             app:cardPreventCornerOverlap="true"
             android:layout_height="@dimen/_120sdp">
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnCourseMaterial"
+                android:id="@+id/btnCSEDeptWeb"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/white"
